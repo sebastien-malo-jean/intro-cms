@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Comportements à l'activation du plugin
  */
