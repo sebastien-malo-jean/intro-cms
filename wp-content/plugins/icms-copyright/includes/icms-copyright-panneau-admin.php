@@ -36,22 +36,22 @@ function icms_copyright_page_admin() {
                 <form method="post" style="margin-top:25px;">
                     <label for="icms-copyright-nom">' . __( 'Nom : ', 'icms-copyright' ) . '</label>
                     <input type="text" id="icms-copyright-nom" name="icms-copyright-nom" value="' . esc_attr( $icms_copyright_nom ) . '"?>
-<button type="submit" name="enregistrer">' . __( 'Enregistrer', 'icms-copyright' ) . '</button>
-</form>
-</div>';
+                    <button type="submit" name="enregistrer">' . __( 'Enregistrer', 'icms-copyright' ) . '</button>
+                </form>
+            </div>';
 }
 
 
 
 /**
-* Update le nom à afficher en copyright
-*/
+ * Update le nom à afficher en copyright
+ */
 function icms_copyright_update_data() {
-global $wpdb;
+    global $wpdb;
 
-$icms_copyright_nom = sanitize_text_field( $_POST['icms-copyright-nom'] );
+    $icms_copyright_nom = sanitize_text_field( $_POST['icms-copyright-nom'] );
 
-$data = [ 'nom' => $icms_copyright_nom ];
-$where = [ 'id' => 1 ];
-$wpdb->UPDATE( ICMS_COPYRIGHT, $data, $where );
+    $data = [ 'nom' => $icms_copyright_nom ];
+    $where = [ 'id' => 1 ];
+    $wpdb->UPDATE( ICMS_COPYRIGHT, $data, $where );
 }

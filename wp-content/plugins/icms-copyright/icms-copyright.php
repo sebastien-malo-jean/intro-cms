@@ -4,6 +4,9 @@ Plugin Name: ICMS Copyright
 Description: Ajoute un copyright en bas de page
 Version: 1
 Author: Simon C-Bouchard
+
+Text Domain: icms-copyright
+Domain Path: /languages/
 */
 
 
@@ -14,6 +17,18 @@ if ( !defined( 'ABSPATH' ) ){
     exit;
 }
 
+/**
+ * Charge les traductions définies à l'intérieur du dossier languages
+ */
+function icms_copyright_charge_textdomain() {
+    load_plugin_textdomain(
+     'icms-copyright',
+     false,
+     dirname( plugin_basename( __FILE__ ) ) . '/languages/'
+    );
+    }
+    add_action( 'init', 'icms_copyright_charge_textdomain' );
+    
 
 
 /**
@@ -66,4 +81,3 @@ function icms_copyright_styles() {
     wp_enqueue_style( 'icms-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'icms_copyright_styles' );
-
