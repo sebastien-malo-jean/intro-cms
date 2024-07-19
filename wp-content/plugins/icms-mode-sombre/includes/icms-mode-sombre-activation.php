@@ -15,7 +15,7 @@ function icms_mode_sombre_activation() {
             PRIMARY KEY (id)
         )";
 
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        require_once ABSPATH . 'wp-admin/includes/upgrade.php';
         dbDelta( $sql );
 
         $wpdb->INSERT( $table_name, array( 'mode' => '' ) );
