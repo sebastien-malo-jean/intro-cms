@@ -28,13 +28,13 @@ add_action('plugins_loaded', 'icms_mode_sombre_define_const', 0);
 /**
  * Charge les comportements à l'activation
  */
-require_once( plugin_dir_path( __FILE__ ) . '/includes/icms-mode-sombre-activation.php' );
+require_once plugin_dir_path( __FILE__ ) . '/includes/icms-mode-sombre-activation.php';
 register_activation_hook( __FILE__, 'icms_mode_sombre_activation' );
 
 /**
  * Charge le panneau admin
  */
-require_once( plugin_dir_path( __FILE__ ) . '/includes/icms-mode-sombre-panneau-admin.php' );
+require_once plugin_dir_path( __FILE__ ) . '/includes/icms-mode-sombre-panneau-admin.php';
 
 /**
  * Charge le fichier CSS
